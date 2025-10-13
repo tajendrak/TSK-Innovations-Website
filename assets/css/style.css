@@ -295,50 +295,66 @@ h3{font-size:var(--h3)}
   }
   .nav-toggle{display:block}
 }
-/* ===== MOBILE RESPONSIVE FIX ===== */
+/* ===== MOBILE RESPONSIVE FIX FOR SERVICES ===== */
 @media (max-width: 768px) {
   /* Stack service cards vertically */
   .cards {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
   }
 
   .card {
     width: 90%;
-    max-width: 400px;
+    max-width: 420px;
     margin: 0 auto;
   }
 
-  /* Adjust button */
-  .btn, .btn-lg {
-    width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-    display: block;
-  }
-
-  /* Center align text for nicer look */
-  .card h3, .card p, .card ul {
-    text-align: left;
-  }
-
-  /* Reduce padding for compact screens */
-  .section {
-    padding: 40px 0;
-  }
-
-  /* Navbar and hero minor fix */
-  .hero-inner {
-    flex-direction: column;
+  /* Make text cleaner and readable */
+  .card h3 {
+    font-size: 1.15rem;
     text-align: center;
   }
 
-  .hero-inner img {
+  .card ul {
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Center the CTA button */
+  .cta-center {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .cta-center .btn-lg {
     width: 90%;
-    margin-top: 20px;
+    max-width: 420px;
+  }
+
+  /* Adjust spacing for section */
+  #services.section {
+    padding: 60px 0;
+  }
+
+  /* Slight padding fix for container */
+  #services .container {
+    padding: 0 16px;
   }
 }
+
+/* ===== EXTRA SMALL DEVICES (phones <480px) ===== */
+@media (max-width: 480px) {
+  .card {
+    width: 95%;
+    padding: 20px;
+  }
+  .cta-center .btn-lg {
+    width: 95%;
+  }
+}
+
 
 
