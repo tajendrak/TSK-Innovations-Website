@@ -409,3 +409,20 @@ h3{font-size:var(--h3)}
 html, body { overflow-x: hidden; }
 
 
+/* ===== Navbar Logo Size ===== */
+.logo {
+  height: 60px;      /* increase or decrease this value */
+  width: auto;       /* keeps aspect ratio */
+}
+
+@media (min-width: 768px) {
+  .logo {
+    height: 72px;    /* slightly larger on bigger screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 48px;    /* smaller on small phones */
+  }
+}
