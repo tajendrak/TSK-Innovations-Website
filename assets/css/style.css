@@ -295,4 +295,9 @@ h3{font-size:var(--h3)}
   }
   .nav-toggle{display:block}
 }
+/* ===== Mobile fixes (stack boxes vertically & improve spacing) ===== */
+@media (max-width: 640px){ ... }
+@media (min-width: 641px) and (max-width: 900px){ ... }
+img, svg { max-width: 100%; height: auto; }
+.container { width: 100%; }
 
