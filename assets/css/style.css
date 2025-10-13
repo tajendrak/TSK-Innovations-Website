@@ -357,4 +357,65 @@ h3{font-size:var(--h3)}
 }
 
 
+/* ===== MOBILE RESPONSIVE FIX FOR CONTACT ===== */
+@media (max-width: 768px) {
+  /* Container breathing room */
+  #contact .container { padding: 0 16px; }
+
+  /* Stack the two columns */
+  .contact-panel {
+    grid-template-columns: 1fr;
+    padding: 18px;
+    row-gap: 18px;
+  }
+
+  .contact-col { gap: 12px; }
+
+  /* Each contact row: comfy tap targets */
+  .contact-item {
+    padding: 14px;
+    border-radius: 14px;
+    align-items: center;     /* icon + text aligned */
+  }
+
+  .ci-icon { width: 40px; height: 40px; }
+
+  .ci-label { font-size: 0.9rem; }
+  .ci-value {
+    font-size: 1rem;
+    display: inline-block;
+    overflow-wrap: anywhere; /* long emails/links wrap nicely */
+  }
+
+  /* Right column CTA */
+  .contact-cta h3 { 
+    font-size: 1.15rem; 
+    text-align: center; 
+  }
+  .contact-cta p,
+  .privacy { text-align: center; }
+
+  .contact-actions {
+    justify-content: center;
+    gap: 12px;
+  }
+  .contact-actions .btn,
+  .contact-actions .btn-lg {
+    width: 100%;
+    max-width: 420px; /* big, thumb-friendly */
+  }
+
+  /* Extra bottom space so the floating WA button doesn't overlap */
+  #contact.section { padding-bottom: 90px; }
+}
+
+/* Extra-small phones */
+@media (max-width: 480px) {
+  .ci-icon { width: 36px; height: 36px; }
+  .contact-item { padding: 12px; }
+  .contact-actions .btn { padding: 12px 14px; }
+
+  /* Nudge floating WhatsApp a bit */
+  .wa-float { right: 14px; bottom: 14px; }
+}
 
