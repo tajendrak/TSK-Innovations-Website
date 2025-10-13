@@ -357,65 +357,55 @@ h3{font-size:var(--h3)}
 }
 
 
-/* ===== MOBILE RESPONSIVE FIX FOR CONTACT ===== */
-@media (max-width: 768px) {
-  /* Container breathing room */
-  #contact .container { padding: 0 16px; }
+/* ===== Contact section – mobile fix ===== */
+@media (max-width: 768px){
 
-  /* Stack the two columns */
-  .contact-panel {
-    grid-template-columns: 1fr;
-    padding: 18px;
-    row-gap: 18px;
+  /* Make the whole panel breathe and stay inside the viewport */
+  .contact-panel{
+    grid-template-columns: 1fr !important;
+    padding: 16px !important;
+    margin: 0 12px 28px !important;   /* side gutters on small screens */
+    border-radius: 16px !important;
   }
 
-  .contact-col { gap: 12px; }
+  .contact-col{ gap: 12px !important; }
 
-  /* Each contact row: comfy tap targets */
-  .contact-item {
-    padding: 14px;
-    border-radius: 14px;
-    align-items: center;     /* icon + text aligned */
+  /* Each contact row: smaller padding + no overflow */
+  .contact-item{
+    padding: 14px !important;
+    border-radius: 14px !important;
+    overflow: hidden;                  /* trims any inner overflow */
   }
 
-  .ci-icon { width: 40px; height: 40px; }
+  /* Icon size stays comfy but not huge */
+  .ci-icon{ width: 38px; height: 38px; border-radius: 10px; }
 
-  .ci-label { font-size: 0.9rem; }
-  .ci-value {
-    font-size: 1rem;
-    display: inline-block;
-    overflow-wrap: anywhere; /* long emails/links wrap nicely */
+  /* Text sizing + wrapping so long emails don’t push layout */
+  .ci-label{ font-size: .9rem; }
+  .ci-value{
+    font-size: 1.02rem;
+    word-break: break-word;            /* wrap long email/links */
+    overflow-wrap: anywhere;
   }
 
-  /* Right column CTA */
-  .contact-cta h3 { 
-    font-size: 1.15rem; 
-    text-align: center; 
-  }
-  .contact-cta p,
-  .privacy { text-align: center; }
-
-  .contact-actions {
-    justify-content: center;
-    gap: 12px;
-  }
+  /* CTA column */
+  .contact-cta h3{ font-size: 1.15rem; margin-bottom: 6px; }
+  .contact-actions{ gap: 8px; }
   .contact-actions .btn,
-  .contact-actions .btn-lg {
-    width: 100%;
-    max-width: 420px; /* big, thumb-friendly */
-  }
+  .contact-actions .btn-lg{ width: 100%; } /* full-width buttons */
 
-  /* Extra bottom space so the floating WA button doesn't overlap */
-  #contact.section { padding-bottom: 90px; }
+  /* Give space for the floating WhatsApp bubble */
+  #contact.section{ padding-bottom: 120px !important; }
 }
 
-/* Extra-small phones */
-@media (max-width: 480px) {
-  .ci-icon { width: 36px; height: 36px; }
-  .contact-item { padding: 12px; }
-  .contact-actions .btn { padding: 12px 14px; }
-
-  /* Nudge floating WhatsApp a bit */
-  .wa-float { right: 14px; bottom: 14px; }
+/* Very small phones */
+@media (max-width: 400px){
+  .contact-panel{ margin: 0 10px 24px !important; padding: 14px !important; }
+  .contact-item{ padding: 12px !important; }
+  .ci-value{ font-size: 1rem; }
 }
+
+/* Prevent any accidental horizontal scroll on mobiles */
+html, body { overflow-x: hidden; }
+
 
