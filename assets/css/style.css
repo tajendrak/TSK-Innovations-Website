@@ -409,20 +409,21 @@ h3{font-size:var(--h3)}
 html, body { overflow-x: hidden; }
 
 
-/* ===== Navbar Logo Size ===== */
-.logo {
-  height: 60px;      /* increase or decrease this value */
-  width: auto;       /* keeps aspect ratio */
+/* ==== Enlarge navbar logo (override earlier rule) ==== */
+.site-header .logo{
+  height: 72px !important;   /* adjust: 56 / 64 / 72 */
+  width: auto !important;    /* keep aspect ratio */
 }
 
-@media (min-width: 768px) {
-  .logo {
-    height: 72px;    /* slightly larger on bigger screens */
-  }
+/* Give the header a bit more room so the bigger logo fits nicely */
+.site-header .header-inner{
+  height: 84px;              /* was 64px in your CSS */
+  align-items: center;
+  padding: 6px 0;
 }
 
-@media (max-width: 480px) {
-  .logo {
-    height: 48px;    /* smaller on small phones */
-  }
+/* Optional: scale down on small phones */
+@media (max-width: 480px){
+  .site-header .logo{ height: 56px !important; }
+  .site-header .header-inner{ height: 72px; }
 }
