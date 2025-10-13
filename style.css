@@ -295,3 +295,49 @@ h3{font-size:var(--h3)}
   .nav-toggle{display:block}
 }
 
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+  /* Stack service cards vertically */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Adjust button */
+  .btn, .btn-lg {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  /* Center align text for nicer look */
+  .card h3, .card p, .card ul {
+    text-align: left;
+  }
+
+  /* Reduce padding for compact screens */
+  .section {
+    padding: 40px 0;
+  }
+
+  /* Navbar and hero minor fix */
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-inner img {
+    width: 90%;
+    margin-top: 20px;
+  }
+}
+
