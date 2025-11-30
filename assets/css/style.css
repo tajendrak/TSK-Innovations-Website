@@ -1,77 +1,81 @@
 /* assets/css/style.css
-   Clean Light-Blue Theme — TSK Innovations
-   Updated: Stronger Blue Gradient Background
+   TSK Innovations — Full CSS (White + Light-Blue Premium Theme)
+   - Uses your logo-derived blue (#3E63FF, #5B7CFF)
+   - Soft white -> light-blue backgrounds
+   - Elevated cards, premium contact box, refined buttons & shadows
+   - Mobile-first, responsive, accessible
 */
 
 /* ==================== THEME VARIABLES ==================== */
 :root{
-  /* Overall background (Stronger Blue -> White) */
-  --bg-1: #dbeafe;       /* distinct light blue (previously too faint) */
+  /* Background (soft white with a blue tint) */
+  --bg-1: #f8fbff;       /* very light blue */
   --bg-2: #ffffff;       /* white */
 
   /* Text */
   --text: #101828;       /* dark navy for high readability */
   --muted: #667085;      /* muted gray-blue for secondary text */
 
+  /* Brand blues (from your logo) */
+  --blue-1: #3E63FF;     /* primary logo blue */
+  --blue-2: #5B7CFF;     /* secondary blue */
+  --blue-3: #AFC8FF;     /* soft sky-blue */
+
+  /* Gradients */
+  --grad-light-blue: linear-gradient(180deg, #FFFFFF 0%, #EAF0FF 100%);
+  --grad-blue-soft: linear-gradient(180deg, #EAF0FF 0%, #C9D9FF 100%);
+  --grad-blue-premium: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-2) 100%);
+
   /* Cards / surfaces */
-  --card: #ffffff;       /* pure white card surface */
-  --card-2: #f4f8ff;     /* subtle blue-tinted card gradient stop */
-  --glass: rgba(255,255,255,0.72);
+  --card: var(--grad-light-blue);
+  --card-2: var(--grad-blue-soft);
+  --accent-soft: #e8f1ff;
 
-  /* Primary accent (light blue) */
-  --accent: #3b82f6;     /* primary */
-  --accent-2: #60a5fa;   /* secondary lighter blue */
+  /* Accents & actions */
+  --accent: var(--blue-1);
+  --accent-2: var(--blue-2);
+  --accent-orange: #ffb857;
 
-  /* Secondary accent(s) */
-  --accent-soft: #e8f1ff;   /* subtle icon / badge background */
-  --accent-orange: #ffb857; /* optional */
+  /* Shadows & elevation */
+  --shadow-xs: 0 4px 12px rgba(0, 40, 120, 0.10);
+  --shadow-sm: 0 8px 20px rgba(0, 40, 120, 0.12);
+  --shadow-md: 0 14px 36px rgba(0, 40, 120, 0.18);
 
-  /* Shadows and elevation */
-  --shadow-xs: 0 4px 10px rgba(2,8,23,0.06);
-  --shadow-sm: 0 8px 20px rgba(2,8,23,0.08);
-  --shadow-md: 0 14px 40px rgba(2,8,23,0.10);
-
-  /* Radius / spacing */
+  /* Layout */
   --radius: 14px;
   --gap: 1rem;
   --container: 1200px;
 
-  /* Typography scale */
+  /* Typography */
   --fs-base: 16px;
   --fs-sm: 14px;
   --fs-lg: 18px;
   --fs-xl: 20px;
   --fs-xxl: 28px;
 
-  /* Motion & accessibility */
+  /* Motion / accessibility */
   --ease: cubic-bezier(.2,.9,.2,1);
   --dur: 220ms;
-  --focus-color: rgba(59,130,246,0.20);
+  --focus-color: rgba(62,99,255,0.20);
   --focus-outline: 3px;
 
   font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   font-size: var(--fs-base);
   color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Reduced motion fallback */
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   :root { --dur: 50ms; --ease: linear; }
 }
 
 /* ==================== BASE ==================== */
 * { box-sizing: border-box; }
-html { height: 100%; }
-
-body{
-  margin: 0;
-  /* UPDATED BACKGROUND: Stronger blue top fading to white bottom */
-  background: linear-gradient(180deg, var(--bg-1) 0%, #f0f7ff 40%, var(--bg-2) 100%);
-  background-attachment: fixed; /* Keeps the blue top visible while scrolling */
-  min-height: 100vh;
-  
+html,body { height:100%; margin:0; }
+body {
+  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
   color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing:antialiased;
@@ -79,7 +83,7 @@ body{
   font-size: var(--fs-base);
 }
 
-/* Layout container */
+/* Container */
 .container {
   max-width: var(--container);
   margin: 0 auto;
@@ -98,14 +102,14 @@ a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Utilities */
-.u-mb-1{ margin-bottom:.5rem; } .u-mb-2{ margin-bottom:1rem; }
+.u-mb-1{ margin-bottom:.5rem; } .u-mb-2{ margin-bottom:1rem; } .u-mb-3{ margin-bottom:1.5rem; }
 .row{ display:flex; gap:var(--gap); align-items:center; }
 .col{ display:flex; flex-direction:column; gap:.6rem; }
 
 /* Buttons baseline */
 .btn {
   display:inline-flex; align-items:center; justify-content:center;
-  gap:.6rem; padding:.7rem 1rem; border-radius:12px; font-weight:700;
+  gap:.6rem; padding:.72rem 1.05rem; border-radius:12px; font-weight:700;
   cursor:pointer; border:0; min-height:44px;
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
@@ -132,12 +136,10 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ==================== HEADER ==================== */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 120;
-  background: rgba(255,255,255,0.75); /* Slightly more transparent to show blue bg */
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  position: sticky; top: 0; z-index: 120;
+  background: rgba(255,255,255,0.90);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(16,24,40,0.04);
 }
 .header-inner {
   display:flex; align-items:center; justify-content:space-between; gap:var(--gap);
@@ -147,14 +149,14 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .brand-logo { height:40px; width:auto; display:block; border-radius:8px; }
 .brand-name { font-weight:700; color:var(--text); font-size:var(--fs-lg); }
 
-/* Nav */
+/* Navigation */
 .nav { display:flex; gap:.5rem; align-items:center; }
 .nav a { padding:.45rem .6rem; border-radius:10px; color:var(--muted); font-weight:600; font-size:var(--fs-sm); }
-.nav a:hover, .nav a:focus { background: rgba(59,130,246,0.06); color: var(--text); transform: translateY(-1px); }
+.nav a:hover, .nav a:focus { background: rgba(62,99,255,0.06); color: var(--text); transform: translateY(-1px); }
 .nav-cta { padding:.6rem .9rem; border-radius:12px; font-weight:800; background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; box-shadow: var(--shadow-sm); }
 .nav-cta:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 
-/* Mobile toggle */
+/* Mobile nav toggle */
 .nav-toggle { display:none; background:none; border:0; padding:.25rem; cursor:pointer; }
 .nav-toggle .bar { width:22px; height:2px; background:rgba(16,24,40,0.8); display:block; margin:4px 0; border-radius:2px; }
 
@@ -165,23 +167,23 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero .lead { color:var(--muted); max-width:64ch; font-size:var(--fs-lg); }
 .cta-row { display:flex; gap:.75rem; margin-top:.8rem; flex-wrap:wrap; }
 
-/* Hero visual card (keeps visual weight without being heavy) */
+/* Hero visual card */
 .hero-visual { display:flex; align-items:center; justify-content:center; }
 .hero-visual .card {
   width: min(460px, 92%); height:260px;
   border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--card-2), var(--card));
-  border: 1px solid rgba(59,130,246,0.08);
+  background: linear-gradient(180deg, #eef6ff 0%, #ffffff 100%);
+  border: 1px solid rgba(62,99,255,0.08);
   box-shadow: var(--shadow-md);
 }
 
-/* ==================== CARD (GLOBAL) ==================== */
-/* Modern elevated cards with soft-blue tint */
+/* ==================== GLOBAL CARD ==================== */
+/* Modern elevated cards with soft-blue tint matching your logo */
 .card {
-  background: linear-gradient(180deg, var(--card-2) 0%, var(--card) 100%);
+  background: var(--card);
   border-radius: var(--radius);
   padding: 1.2rem;
-  border: 1px solid rgba(59,130,246,0.12);
+  border: 1px solid rgba(62,99,255,0.12);
   box-shadow: var(--shadow-sm);
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
@@ -193,12 +195,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* Icon wrapper for services */
 .icon-wrap {
   width: 56px; height: 56px; border-radius: 12px;
-  background: var(--accent-soft); display:flex; align-items:center; justify-content:center;
-  box-shadow: inset 0 0 0 1px rgba(59,130,246,0.10);
+  background: var(--accent-soft);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: inset 0 0 0 1px rgba(62,99,255,0.10);
   margin-bottom: .8rem;
 }
 
-/* Service card text */
+/* Card text */
 .card h3 { margin-top: 0; margin-bottom: .45rem; font-size: var(--fs-lg); color: var(--text); }
 .bullets { margin: 0; padding-left: 1rem; color: var(--muted); font-size: var(--fs-sm); }
 
@@ -208,32 +211,47 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .services-grid { grid-template-columns: 1fr; }
 
 /* ==================== CONTACT AREA ==================== */
-/* Contact panel general */
-.contact-panel { display: grid; gap: 1rem; }
+.contact-panel { display:grid; gap:1rem; }
 
-/* Left info blocks inside contact — gentle card */
+/* Left info blocks inside contact (gentle cards) */
 .contact-panel > div > .contact-item,
 .contact-panel > div > .card {
   background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
   padding: 1rem;
   border-radius: 12px;
-  border: 1px solid rgba(59,130,246,0.10);
+  border: 1px solid rgba(62,99,255,0.10);
   box-shadow: var(--shadow-sm);
 }
 
-/* The standout contact box (right column) */
+/* Standout contact box on the right */
 .contact-cta {
   background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 75%);
   padding: 1.4rem;
-  border-radius: 16px;
-  border: 1px solid rgba(59,130,246,0.16);
-  box-shadow: 0 12px 36px rgba(59,130,246,0.06);
+  border-radius: 18px;
+  border: 1px solid rgba(62,99,255,0.16);
+  box-shadow: 0 12px 36px rgba(62,99,255,0.06);
 }
-.contact-cta h3 { margin-bottom: .6rem; }
+.contact-cta h3 { margin-bottom:.6rem; }
 .contact-cta p { color: var(--muted); }
 
-/* Contact actions row */
+/* Contact actions */
 .contact-actions { display:flex; gap:.6rem; margin-top:.8rem; flex-wrap:wrap; }
+
+/* Contact form input styles (if used) */
+.input, textarea {
+  width:100%;
+  padding:.72rem .75rem;
+  border-radius:10px;
+  border:1px solid rgba(16,24,40,0.06);
+  background: #fff;
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+.input:focus, textarea:focus {
+  box-shadow: 0 0 0 var(--focus-outline) var(--focus-color);
+  outline: none;
+}
+textarea { min-height:120px; resize:vertical; }
 
 /* ==================== FLOATING WHATSAPP ==================== */
 .wa-float {
@@ -254,7 +272,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   text-align: center;
 }
 
-/* ==================== REVEAL (JS uses 'reveal' class) ==================== */
+/* ==================== REVEAL ANIMATION (JS uses .reveal) ==================== */
 .reveal { opacity: 0; transform: translateY(8px); transition: opacity .45s var(--ease), transform .45s var(--ease); }
 .reveal.show { opacity: 1; transform: none; }
 
