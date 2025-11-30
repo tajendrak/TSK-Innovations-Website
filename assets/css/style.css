@@ -5,32 +5,32 @@
 
 /* =================== THEME / VARIABLES =================== */
 :root{
-  /* 🎨 Background (bright gradient) */
-  --bg-1: #0a1a3a;       /* Deep royal blue */
-  --bg-2: #103d77;       /* Brighter blue */
+  /* 🎨 Background (clean & white-focused) */
+  --bg-1: #ffffff;        /* White primary background */
+  --bg-2: #f7faff;        /* Very light blue tint */
 
-  /* ✨ Text */
-  --text: #fdfdfd;       /* Bright white */
-  --muted: rgba(255,255,255,0.82); /* brighter secondary text */
+  /* ✨ Text colors */
+  --text: #101828;        /* Clean dark navy text */
+  --muted: #667085;       /* Muted gray-blue */
 
-  /* 🧊 Cards / Surfaces */
-  --card: rgba(255,255,255,0.12);   /* brighter than before */
-  --glass: rgba(255,255,255,0.16);
+  /* 🧊 Cards / surfaces */
+  --card: #ffffff;        /* White cards */
+  --glass: rgba(255,255,255,0.7);  /* soft glass effect for elements */
 
-  /* 💚 Accent (buttons, highlights) */
-  --accent: #1de9b6;     /* Mint green bright */
-  --accent-2: #00ffa3;   /* Neon green */
+  /* 🔵 Accent (buttons / highlights) */
+  --accent: #3b82f6;      /* Light Blue — Primary */
+  --accent-2: #60a5fa;    /* Soft blue for gradients */
 
-  /* 🟠 Secondary accent (optional future use) */
-  --accent-orange: #ffb857;
-  --accent-purple: #9d7cff;
+  /* Secondary accent (optional) */
+  --accent-soft: #e0edff; /* Soft light blue background */
 
-  /* 💎 Shadows */
-  --shadow-sm: 0 6px 20px rgba(0,0,0,0.30);
-  --shadow-md: 0 18px 40px rgba(0,0,0,0.40);
+  /* Shadows (soft + clean) */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
 
-  /* Radius & layout */
-  --radius: 14px;
+  /* Radius & spacing */
+  --radius: 12px;
+  --gap: 1rem;
   --container: 1200px;
 
   /* Typography */
@@ -40,15 +40,17 @@
   --fs-xl: 20px;
   --fs-xxl: 28px;
 
-  /* Other */
-  --gap: 1rem;
+  /* Transitions */
   --ease: cubic-bezier(.2,.9,.2,1);
   --dur: 260ms;
-  --focus-color: rgba(0,255,163,0.28);
+
+  /* Focus ring */
+  --focus-color: rgba(59,130,246,0.25);
   --focus-outline: 3px;
 
-  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto;
+  font-family: 'Poppins', sans-serif;
 }
+
 
 
 /* Reduced motion users */
