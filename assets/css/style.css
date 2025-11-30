@@ -1,13 +1,12 @@
 /* assets/css/style.css
    Clean Light-Blue Theme — TSK Innovations
-   Full updated CSS: white-focused with soft blue accents,
-   modern card styles, polished contact box, responsive.
+   Updated: Stronger Blue Gradient Background
 */
 
 /* ==================== THEME VARIABLES ==================== */
 :root{
-  /* Overall background (soft blue -> white) */
-  --bg-1: #f5f8ff;       /* very light blue */
+  /* Overall background (Stronger Blue -> White) */
+  --bg-1: #dbeafe;       /* distinct light blue (previously too faint) */
   --bg-2: #ffffff;       /* white */
 
   /* Text */
@@ -64,9 +63,15 @@
 
 /* ==================== BASE ==================== */
 * { box-sizing: border-box; }
-html,body { height: 100%; margin: 0; }
+html { height: 100%; }
+
 body{
-  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  margin: 0;
+  /* UPDATED BACKGROUND: Stronger blue top fading to white bottom */
+  background: linear-gradient(180deg, var(--bg-1) 0%, #f0f7ff 40%, var(--bg-2) 100%);
+  background-attachment: fixed; /* Keeps the blue top visible while scrolling */
+  min-height: 100vh;
+  
   color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing:antialiased;
@@ -130,9 +135,9 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   position: sticky;
   top: 0;
   z-index: 120;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(16,24,40,0.04);
+  background: rgba(255,255,255,0.75); /* Slightly more transparent to show blue bg */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 .header-inner {
   display:flex; align-items:center; justify-content:space-between; gap:var(--gap);
@@ -280,4 +285,3 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (min-width: 1600px) {
   :root { --container: 1400px; --fs-xxl: 32px; }
 }
-
