@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -11,7 +10,9 @@
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="shortcut icon" href="assets/favicon.png" type="image/png" />
 
-  <!-- Webpage Logo Preview (Optional for social media previews) -->
+  <!-- Social preview -->
+  <meta property="og:title" content="TSK Innovations — Digital Media for SMEs" />
+  <meta property="og:description" content="Social Media Marketing, Website Development, Content Creation, Ads Management and Data Analysis for SMEs." />
   <meta property="og:image" content="assets/logo.png" />
 
   <!-- Fonts -->
@@ -21,15 +22,14 @@
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-  
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="TSK Innovations home">
-        <img src="TSK_Logo_XWord.png" alt="TSK Innovations" class="brand-logo" />
+        <img src="assets/logo.png" alt="TSK Innovations" class="brand-logo" />
         <span class="brand-name">TSK Innovations</span>
       </a>
 
@@ -37,41 +37,54 @@
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
 
-      <nav id="primary-nav" class="nav" role="navigation">
+      <nav id="primary-nav" class="nav" role="navigation" aria-label="Primary navigation">
         <a href="#home" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a class="btn nav-cta" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener">WhatsApp</a>
+
+        <!-- WhatsApp CTA: logo-only button -->
+        <a class="btn nav-cta wa-icon-btn" href="https://wa.me/601151398010" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+          <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="wa-icon">
+        </a>
       </nav>
     </div>
   </header>
 
-  <!-- Main content -->
+  <!-- Main -->
   <main id="main">
     <!-- Hero -->
-    <section id="home" class="hero">
+    <section id="home" class="hero reveal" aria-label="Home">
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1>Digital Media that grows your business</h1>
-          <p class="lead">TSK Innovations: Social Media Marketing, Website Development, Content Creation, Ads Management, and Data Analysis for SMEs.</p>
+          <p class="lead">TSK Innovations helps SMEs scale with Website Development, Social Media Marketing, Content Creation, Ads Management and Data Analysis. We build practical strategies that deliver real results.</p>
+
           <div class="cta-row">
-            <a class="btn btn-primary" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services." target="_blank">Chat on WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/601151398010" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+              <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="wa-icon"> 
+              Chat on WhatsApp
+            </a>
             <a class="btn btn-ghost" href="#services">View Services</a>
           </div>
         </div>
 
         <div class="hero-visual" aria-hidden="true">
-          <!-- decorative SVG -->
-          <svg width="260" height="160" viewBox="0 0 260 160" aria-hidden="true">
-            <rect x="2" y="2" width="256" height="156" rx="12" fill="rgba(255,255,255,0.02)"/>
-          </svg>
+          <div class="card">
+            <!-- decorative SVG placeholder -->
+            <svg width="360" height="220" viewBox="0 0 360 220" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="360" height="220" rx="16" fill="rgba(62,99,255,0.04)"/>
+              <circle cx="80" cy="110" r="46" fill="rgba(95,132,255,0.06)"/>
+              <rect x="150" y="70" width="180" height="20" rx="8" fill="rgba(62,99,255,0.03)"/>
+              <rect x="150" y="108" width="120" height="14" rx="7" fill="rgba(62,99,255,0.03)"/>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="section">
+    <section id="about" class="section reveal" aria-label="About">
       <div class="container">
         <h2>About TSK Innovations</h2>
         <p class="section-sub">A Malaysia-based digital media company helping SMEs grow with practical, affordable digital services.</p>
@@ -79,80 +92,152 @@
         <div class="grid about-grid">
           <div class="card">
             <h3>What we do</h3>
-            <p>Social Media Marketing, Website Development, Content Creation, Ads Management, and Data Analysis.</p>
+            <p>We deliver end-to-end digital services: websites, social content, ads, automation and analytics — tailored for small businesses who want measurable growth.</p>
           </div>
+
           <div class="card">
             <h3>Mission</h3>
-            <p>Drive measurable growth for SMEs through simple, effective digital solutions.</p>
+            <p>To empower SMEs with simple, effective digital tools that generate leads, streamline operations, and improve customer experience.</p>
           </div>
+
           <div class="card">
             <h3>Vision</h3>
-            <p>Be the trusted digital partner for local businesses across Southeast Asia.</p>
+            <p>Be the trusted growth partner for businesses across Southeast Asia — delivering modern digital systems without the complexity or high cost.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Services -->
-    <section id="services" class="section">
+    <section id="services" class="section reveal" aria-label="Services">
       <div class="container">
         <h2>Services</h2>
         <p class="section-sub">Smart solutions, made simple and affordable.</p>
 
-        <div class="grid services-grid">
-          <article class="card">
+        <!-- Services Grid -->
+        <div class="services-grid">
+
+          <article class="card service-card reveal">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20M12 2c3 3.5 3 16.5 0 20M12 2c-3 3.5-3 16.5 0 20"></path>
+              </svg>
+            </div>
             <h3>Website Development</h3>
-            <ul><li>Mobile-first websites</li><li>Domain & hosting guidance</li></ul>
+            <p class="service-desc">
+              Fast, secure and mobile-first websites with clear calls-to-action. We provide landing pages, multipage business sites, and ecommerce setups with conversion-focused layouts, basic SEO, and analytics tracking.
+            </p>
           </article>
 
-          <article class="card">
+          <article class="card service-card reveal">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <path d="M8.6 13.5l6.8 3.9M15.4 6.6L8.6 10.5"></path>
+              </svg>
+            </div>
             <h3>Social Media Marketing</h3>
-            <ul><li>Content & video</li><li>Scheduling & analytics</li></ul>
+            <p class="service-desc">
+              Strategy, content, and community: we create engaging posts, short-form videos, captions, and templates. Monthly content calendars, performance tracking, and community engagement to grow followers and leads.
+            </p>
           </article>
 
-          <article class="card">
-            <h3>Ads Management</h3>
-            <ul><li>Facebook / Instagram</li><li>Google Ads</li></ul>
+          <article class="card service-card reveal">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="3" y="7" width="18" height="10" rx="2"></rect>
+                <circle cx="8" cy="12" r="1.5"></circle>
+                <circle cx="16" cy="12" r="1.5"></circle>
+                <path d="M12 4v3M12 20v-3"></path>
+              </svg>
+            </div>
+            <h3>Business Automation</h3>
+            <p class="service-desc">
+              Save time with WhatsApp auto-replies, booking & scheduling systems, CRM integrations, automated invoices and simple AI assistants. We build workflows that reduce manual tasks and improve customer response times.
+            </p>
           </article>
 
-          <article class="card">
-            <h3>Data Analysis</h3>
-            <ul><li>Dashboards & reports</li><li>Actionable recommendations</li></ul>
+          <article class="card service-card reveal">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 19V5M10 19V9M16 19V3M22 19H2"></path>
+              </svg>
+            </div>
+            <h3>Data Insights</h3>
+            <p class="service-desc">
+              Dashboards, reporting and actionable analysis. We clean data, connect sources, and visualise customer behaviour, sales funnels, and campaign performance so you can make smarter decisions — fast.
+            </p>
           </article>
+
+        </div><!-- /.services-grid -->
+
+        <div class="cta-center u-mt-2">
+          <a class="btn btn-primary" href="https://wa.me/601151398010" target="_blank" rel="noopener">
+            <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="wa-icon"> 
+            Let's build together
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal" aria-label="Contact">
       <div class="container">
         <h2>Contact</h2>
         <p class="section-sub">Got a project or idea? Let’s talk.</p>
 
-        <div class="contact-grid">
-          <div>
-            <p><strong>Email:</strong> <a href="mailto:tskinnovate@gmail.com">tskinnovate@gmail.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+601151398010">011-51398010</a></p>
-            <p><strong>WhatsApp:</strong> <a href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!">Chat now</a></p>
+        <div class="contact-panel">
+
+          <!-- LEFT: basic contact info blocks -->
+          <div class="contact-info-col">
+            <div class="card contact-item">
+              <h4>Email</h4>
+              <a href="mailto:tskinnovate@gmail.com">tskinnovate@gmail.com</a>
+              <p class="u-mt-1">We typically reply within 24 hours. For urgent requests use WhatsApp.</p>
+            </div>
+
+            <div class="card contact-item">
+              <h4>Phone</h4>
+              <a href="tel:+601151398010">011-51398010</a>
+              <p class="u-mt-1">Call or message for quick consultations and quotes.</p>
+            </div>
+
+            <div class="card contact-item">
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/601151398010" target="_blank" rel="noopener">Chat now on WhatsApp</a>
+              <p class="u-mt-1">Fastest way to get a pricing estimate or schedule a meeting.</p>
+            </div>
           </div>
 
-          <aside class="card contact-cta">
-            <h3>Let's build something amazing together</h3>
-            <p>Tell us your goals and budget — we’ll reply with a clear plan.</p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!">Chat on WhatsApp</a>
+          <!-- RIGHT: standout CTA box -->
+          <aside class="contact-cta">
+            <h3>Let’s Work Together</h3>
+            <p>Share your goals, timeline and approximate budget — we’ll respond with a clear plan and next steps.</p>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="https://wa.me/601151398010" target="_blank" rel="noopener" aria-label="WhatsApp chat">
+                <img src="assets/whatsapp-logo.png" alt="WhatsApp" class="wa-icon"> 
+                WhatsApp Us
+              </a>
+
               <a class="btn btn-ghost" href="mailto:tskinnovate@gmail.com">Email Us</a>
             </div>
+
+            <p class="privacy u-mt-2">We respect your privacy. Your info will only be used to reply to your inquiry.</p>
           </aside>
-        </div>
+
+        </div><!-- /.contact-panel -->
       </div>
     </section>
   </main>
 
   <!-- Floating WhatsApp -->
-  <a class="wa-float" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
-    <!-- tiny inline SVG -->
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M20 3.5A10 10 0 0 0 4.7 19.2L3.5 22l2.9-1.1A10 10 0 1 0 20 3.5Z" fill="#fff" opacity="0.08"/><path d="M16.25 15.25c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.68.15-.21.3-.82.96-1.01 1.16-.18.2-.36.22-.67.07-.31-.15-1.33-.49-2.54-1.56-.94-.84-1.57-1.88-1.75-2.18-.18-.3-.02-.46.13-.61.14-.14.31-.36.46-.54.15-.18.2-.3.3-.5.1-.21.05-.39-.02-.54-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.54.07-.82.37-.28.3-1.06 1.03-1.06 2.51 0 1.48 1.09 2.91 1.24 3.11.15.2 2.15 3.45 5.21 4.84 3.06 1.39 3.06.93 3.61.87.55-.06 1.75-.71 2-1.4.25-.69.25-1.28.18-1.4-.07-.12-.27-.18-.57-.33z" fill="#fff"/></svg>
+  <a class="wa-float" href="https://wa.me/601151398010" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <!-- keep as icon for visibility -->
+    <svg viewBox="0 0 24 24" fill="none" width="28" height="28" aria-hidden="true"><path d="M20 3.5A10 10 0 0 0 4.7 19.2L3.5 22l2.9-1.1A10 10 0 1 0 20 3.5Z" fill="#fff" opacity="0.08"/><path d="M16.25 15.25c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.68.15-.21.3-.82.96-1.01 1.16-.18.2-.36.22-.67.07-.31-.15-1.33-.49-2.54-1.56-.94-.84-1.57-1.88-1.75-2.18-.18-.3-.02-.46.13-.61.14-.14.31-.36.46-.54.15-.18.2-.3.3-.5.1-.21.05-.39-.02-.54-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.54.07-.82.37-.28.3-1.06 1.03-1.06 2.51 0 1.48 1.09 2.91 1.24 3.11.15.2 2.15 3.45 5.21 4.84 3.06 1.39 3.06.93 3.61.87.55-.06 1.75-.71 2-1.4.25-.69.25-1.28.18-1.4-.07-.12-.27-.18-.57-.33z" fill="#fff"/></svg>
   </a>
 
   <!-- Footer -->
@@ -163,23 +248,54 @@
   </footer>
 
   <!-- Main script -->
-  <script src="assets/js/main.js" defer></script>
+  <script>
+    // small inline script (keeps index simple)
+    document.addEventListener('DOMContentLoaded', function() {
+      var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+      var nav = document.querySelector('.nav');
+      var toggle = document.querySelector('.nav-toggle');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function(){
+          var open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      // smooth scroll for internal links
+      document.addEventListener('click', function(e){
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        var id = href.slice(1);
+        var el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+          if (nav && nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+
+      // reveal animation (IntersectionObserver)
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              io.unobserve(entry.target);
+            }
+          });
+        }, {threshold: 0.15});
+        reveals.forEach(function(r){ io.observe(r); });
+      } else {
+        reveals.forEach(function(r){ r.classList.add('show'); });
+      }
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
