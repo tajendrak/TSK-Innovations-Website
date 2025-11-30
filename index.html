@@ -2,19 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TSK Innovations — Smart Digital Solutions for SMEs</title>
-  <meta name="description" content="TSK Innovations helps SMEs grow through websites, social media marketing, content creation, ads management, and data analysis. Chat with us on WhatsApp." />
-  <meta property="og:title" content="TSK Innovations — Smart Digital Solutions for SMEs" />
-  <meta property="og:description" content="Websites, social media, ads, content, and data analysis for SMEs. Chat with us on WhatsApp." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TSK Innovations — Digital Media for SMEs</title>
+  <meta name="description" content="TSK Innovations — Social Media Marketing, Website Development, Content Creation, Ads Management and Data Analysis for SMEs." />
+  <meta name="author" content="TSK Innovations" />
+  <meta name="keywords" content="TSK Innovations, social media, website development, content creation, ads management, data analysis, Malaysia" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="TSK Innovations" />
+  <meta property="og:title" content="TSK Innovations — Digital Media for SMEs" />
+  <meta property="og:description" content="Social Media Marketing, Website Development, Content Creation, Ads Management and Data Analysis for SMEs." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="TSK_Logo_Word.png" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=2">
+  <meta property="og:image" content="assets/logo-preview.png" />
+  <meta property="og:url" content="https://example.com/" />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=9">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TSK Innovations — Digital Media for SMEs" />
+  <meta name="twitter:description" content="Social Media Marketing, Website Development, Content Creation, Ads Management and Data Analysis for SMEs." />
+  <meta name="twitter:image" content="assets/logo-preview.png" />
 
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Schema.org Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -22,311 +32,373 @@
     "name": "TSK Innovations",
     "url": "https://example.com",
     "email": "tskinnovate@gmail.com",
-    "telephone": "+60 11-51398010",
-    "logo": "https://example.com/assets/img/logo.svg",
-    "address": { "@type": "PostalAddress", "addressCountry": "MY", "addressRegion": "Selangor" },
+    "telephone": "+601151398010",
+    "logo": "https://example.com/assets/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "MY"
+    },
     "sameAs": []
   }
   </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles (inline for single-file delivery) -->
+  <style>
+    :root{
+      --bg-1:#031426;
+      --bg-2:#07263f;
+      --card: rgba(255,255,255,0.03);
+      --muted: rgba(255,255,255,0.66);
+      --accent: #00a86b;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --max-w:1100px;
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #E6EEF6;
+      line-height:1.45;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      font-size:16px;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max-w); margin:0 auto; padding:1.25rem;}
+
+    /* Skip link */
+    .skip-link{
+      position: absolute; left: -999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{left:1rem; top:1rem; width:auto; height:auto; padding:0.5rem 0.75rem; background:#fff; color:#000; border-radius:6px; z-index:9999;}
+
+    /* Header */
+    .site-header{
+      position:sticky; top:0; z-index:60; backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(1,8,18,0.55), rgba(1,8,18,0.25));
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .header-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.9rem 1rem;}
+    .brand{display:flex; align-items:center; gap:0.75rem;}
+    .brand img{height:36px; width:auto; display:block; border-radius:6px;}
+    .brand .brand-name{font-weight:600; letter-spacing:0.2px; color: #E6F1EE}
+
+    .nav{display:flex; gap:1rem; align-items:center;}
+    .nav a{padding:0.5rem 0.6rem; border-radius:8px; color:var(--muted); font-weight:500; font-size:0.95rem;}
+    .nav a:hover, .nav a:focus{color:#fff; background:rgba(255,255,255,0.02);}
+    .nav .nav-cta{background:linear-gradient(90deg,var(--accent),#0bd68f); color:#001; padding:0.5rem 0.9rem; font-weight:700; border-radius:10px; box-shadow: 0 6px 18px rgba(0,168,107,0.12);}
+
+    /* Mobile nav toggle */
+    .nav-toggle{display:none; background:none; border:0; padding:6px; margin-left:6px;}
+    .nav-toggle .bar{display:block; width:22px; height:2px; background:#cfeee1; margin:4px 0; border-radius:2px;}
+
+    /* Hero */
+    .hero{padding:4.5rem 0 3.5rem; position:relative; overflow:hidden;}
+    .hero-inner{display:flex; gap:2rem; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+    .hero-copy{flex:1 1 520px; min-width:260px;}
+    .hero h1{font-size:2rem; margin:0 0 0.75rem; line-height:1.05; letter-spacing:-0.4px;}
+    .hero p.lead{color:var(--muted); margin:0 0 1.25rem; font-size:1.05rem;}
+    .cta-row{display:flex; gap:0.75rem; flex-wrap:wrap;}
+    .btn{display:inline-flex; align-items:center; gap:0.6rem; padding:0.6rem 0.9rem; border-radius:10px; font-weight:600; cursor:pointer;}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#10e0a5); color:#012; box-shadow:0 10px 30px rgba(0,168,107,0.12);}
+    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted);}
+
+    .hero-graphic{flex:0 0 360px; min-width:220px; display:flex; align-items:center; justify-content:center;}
+    .card-visual{width:100%; max-width:360px; height:220px; border-radius:16px; background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); display:flex; align-items:center; justify-content:center; box-shadow: 0 8px 30px rgba(1,6,12,0.6);}
+
+    /* Sections */
+    section{padding:3rem 0;}
+    .section-head{margin-bottom:1.35rem;}
+    .section-head h2{font-size:1.35rem; margin:0 0 0.4rem;}
+    .section-subtitle{color:var(--muted); margin:0;}
+
+    /* About */
+    .about-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin:1rem 0 1.4rem;}
+    .info-card{background:var(--card); padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.02);}
+    .info-card h3{margin:0 0 0.35rem; font-size:1.05rem;}
+    .mini-title{margin:1.2rem 0 0.5rem; color:var(--muted); font-weight:600; font-size:0.95rem;}
+
+    .values-row{display:flex; gap:0.6rem; flex-wrap:wrap; margin:0.6rem 0;}
+    .value-card{background:rgba(255,255,255,0.02); padding:0.45rem 0.7rem; border-radius:10px; display:flex; gap:0.6rem; align-items:center; color:var(--muted); font-weight:600;}
+
+    .approach-steps{display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:0.8rem;}
+    .step{background:var(--card); padding:0.9rem; border-radius:12px; min-width:200px; border:1px solid rgba(255,255,255,0.02);}
+    .step-num{font-weight:700; color:var(--accent); margin-bottom:0.35rem;}
+
+    .why-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); padding:1rem; border-radius:12px; margin-top:1rem;}
+
+    /* Services cards */
+    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1rem;}
+    .card{background:var(--card); padding:1.1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.02);}
+    .icon-wrap{width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.02); display:flex; align-items:center; justify-content:center; margin-bottom:0.6rem;}
+    .card h3{margin:0 0 0.45rem;}
+    .bullets{padding-left:1rem; margin:0; color:var(--muted); list-style:disc; font-size:0.95rem;}
+
+    .cta-center{text-align:center; margin-top:1.25rem;}
+
+    /* Contact panel */
+    .contact-panel{display:grid; grid-template-columns:1fr 360px; gap:1rem; align-items:start;}
+    .contact-item{display:flex; gap:0.75rem; align-items:center; margin-bottom:0.9rem;}
+    .ci-icon{width:44px; height:44px; background:rgba(255,255,255,0.02); display:flex; align-items:center; justify-content:center; border-radius:8px;}
+    .ci-label{font-size:0.85rem; color:var(--muted);}
+    .ci-value{font-weight:700; color:#E6F1EE;}
+
+    .contact-cta h3{margin:0 0 0.5rem;}
+    .contact-actions{display:flex; gap:0.6rem; margin-top:0.8rem; flex-wrap:wrap;}
+
+    .privacy{color:var(--muted); font-size:0.85rem; margin-top:0.9rem}
+
+    /* Floating WhatsApp */
+    .wa-float{position:fixed; right:18px; bottom:18px; z-index:80; display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; background:linear-gradient(180deg,#25D366,#128C7E); border-radius:14px; box-shadow:0 12px 30px rgba(18,140,126,0.18); color:#fff;}
+    .wa-float svg{width:26px;height:26px;}
+
+    /* Footer */
+    .site-footer{padding:1.25rem 0; border-top:1px solid rgba(255,255,255,0.02); background:transparent; color:var(--muted);}
+    .footer-inner{display:flex; gap:1rem; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero h1{font-size:1.6rem}
+      .hero-inner{align-items:flex-start}
+      .contact-panel{grid-template-columns:1fr;}
+      .hero-graphic{order:2}
+    }
+    @media (max-width:720px){
+      .nav{position:fixed; inset:0 0 auto 0; top:64px; left:0; right:0; background:linear-gradient(180deg, rgba(1,8,18,0.95), rgba(1,8,18,0.98)); flex-direction:column; padding:1rem; gap:0.25rem; transform:translateY(-110%); transition:transform .28s ease; }
+      .nav.open{transform:translateY(0)}
+      .nav-toggle{display:block}
+      .nav a{padding:0.8rem; border-radius:10px;}
+      .header-inner{padding:0.6rem 0.8rem}
+    }
+
+    /* small reveal animation */
+    .reveal{opacity:0; transform:translateY(10px); transition:opacity .6s ease, transform .6s ease;}
+    .reveal.show{opacity:1; transform:none;}
+  </style>
 </head>
 <body>
-  <header class="site-header" id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner" aria-label="Main header">
     <div class="container header-inner">
-      <a href="#home" class="brand">
-        <img src="TSK_Logo_Word.png" alt="TSK Innovations logo" class="logo" />
+      <a href="#home" class="brand" aria-label="TSK Innovations homepage">
+        <!-- replace src with your logo -->
+        <img src="assets/logo.png" alt="TSK Innovations logo" onerror="this.style.visibility='hidden'">
         <span class="brand-name">TSK Innovations</span>
       </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#home" class="nav-link active">Home</a>
+      <nav id="primary-nav" class="nav" role="navigation" aria-label="Primary navigation">
+        <a href="#home" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services." class="btn btn-whatsapp nav-cta">WhatsApp</a>
+        <a class="btn nav-cta" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services." aria-label="Chat on WhatsApp">WhatsApp</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section id="home" class="hero section">
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="hero" aria-label="Home">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1 class="reveal">Empowering SMEs Through Smart Digital Solutions</h1>
-          <p class="lead reveal">
-            We help small and growing businesses transform their online presence — from high-converting websites and social media to targeted ads and data-driven insights.
-          </p>
+          <h1 class="reveal">Digital Media that grows your business</h1>
+          <p class="lead reveal">TSK Innovations is a Digital Media Company — we do Social Media Marketing, Website Development, Content Creation, Ads Management and Data Analysis for SMEs.</p>
           <div class="cta-row reveal">
-            <a class="btn btn-primary"
-               href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services.">
-               Chat on WhatsApp
-            </a>
+            <a class="btn btn-primary" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services.">Chat on WhatsApp</a>
             <a class="btn btn-ghost" href="#services">View Services</a>
           </div>
         </div>
+
+        <div class="hero-graphic" aria-hidden="true">
+          <div class="card-visual">
+            <!-- Simple SVG graphic placeholder -->
+            <svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="2" width="216" height="116" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.03)"/>
+              <circle cx="50" cy="60" r="22" fill="rgba(255,255,255,0.03)"/>
+              <rect x="90" y="36" width="110" height="12" rx="6" fill="rgba(255,255,255,0.02)"/>
+              <rect x="90" y="62" width="70" height="12" rx="6" fill="rgba(255,255,255,0.02)"/>
+            </svg>
+          </div>
+        </div>
       </div>
-      <div class="hero-bg" aria-hidden="true"></div>
     </section>
 
-  <section id="about" class="section about-section">
-    <div class="container">
+    <!-- About -->
+    <section id="about" class="section" aria-label="About">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>About TSK Innovations</h2>
+          <p class="section-subtitle">A Malaysia-based digital media company helping SMEs grow with practical, affordable digital services.</p>
+        </header>
 
-      <header class="section-head about-head">
-        <h2>About TSK Innovations</h2>
-        <p class="section-subtitle">
-          TSK Innovations is a Malaysia-based digital solutions company dedicated to helping
-          SMEs grow through affordable technology and marketing strategies.
-        </p>
-      </header>
+        <div class="about-cards">
+          <article class="info-card reveal">
+            <h3>What we do</h3>
+            <p>Social Media Marketing, Website Development, Content Creation, Ads Management and Data Analysis — built to help small businesses attract customers and make smarter decisions.</p>
+          </article>
 
-      <div class="about-cards">
-        <article class="info-card">
-          <div class="info-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
-              <circle cx="12" cy="12" r="8"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
+          <article class="info-card reveal">
+            <h3>Mission</h3>
+            <p>To empower SMEs with clear, measurable digital growth — not just likes, but real leads and conversions.</p>
+          </article>
+
+          <article class="info-card reveal">
+            <h3>Vision</h3>
+            <p>Be the go-to digital partner for local businesses across Southeast Asia that want results without complexity.</p>
+          </article>
+        </div>
+
+        <h3 class="mini-title reveal">Our approach</h3>
+        <div class="approach-steps">
+          <div class="step reveal">
+            <div class="step-num">01</div>
+            <h4>Discover</h4>
+            <p>Understand your customers, goals and KPIs.</p>
           </div>
-          <h3>Our Mission</h3>
-          <p>
-            Empower SMEs with modern, impactful IT and marketing solutions that drive growth.
-            We believe digital success should be accessible to businesses of all sizes.
-          </p>
-        </article>
-
-        <article class="info-card">
-          <div class="info-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12Z"></path>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
+          <div class="step reveal">
+            <div class="step-num">02</div>
+            <h4>Design</h4>
+            <p>Craft messaging, visuals and experience that converts.</p>
           </div>
-          <h3>Our Vision</h3>
-          <p>
-            Become a trusted digital growth partner for SMEs across Southeast Asia, helping them
-            compete and thrive in the digital economy.
-          </p>
+          <div class="step reveal">
+            <div class="step-num">03</div>
+            <h4>Deliver</h4>
+            <p>Launch campaigns, build sites and measure impact — then optimise.</p>
+          </div>
+        </div>
+
+        <article class="why-card reveal">
+          <h3>Why choose us?</h3>
+          <p>We focus on practical, measurable solutions for SMEs — clear pricing, focused execution and ongoing support so technology actually helps your business grow.</p>
         </article>
       </div>
+    </section>
 
-      <h3 class="mini-title">Core Values</h3>
-      <div class="values-row">
-        <div class="value-card">
-          <span class="value-icon">💡</span>
-          <span>Innovation</span>
-        </div>
-        <div class="value-card">
-          <span class="value-icon">🛡️</span>
-          <span>Trust</span>
-        </div>
-        <div class="value-card">
-          <span class="value-icon">📈</span>
-          <span>Results</span>
-        </div>
-        <div class="value-card">
-          <span class="value-icon">👥</span>
-          <span>Communication</span>
-        </div>
-      </div>
-
-      <h3 class="mini-title">Our Approach</h3>
-      <div class="approach-steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <h4>Discover</h4>
-          <p>We learn about your business, goals, and challenges to create a tailored strategy.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <h4>Create</h4>
-          <p>We craft websites, content, and ad campaigns that resonate with your target audience.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <h4>Optimize</h4>
-          <p>We analyze data and refine strategies to ensure continuous growth and ROI.</p>
-        </div>
-      </div>
-
-      <article class="why-card">
-        <h3>Why We Started TSK Innovations</h3>
-        <p>
-          We founded TSK Innovations with a simple belief: every business, regardless of size,
-          deserves access to professional digital services.
-        </p>
-        <p>
-          Having worked with SMEs, we saw how the right strategy can transform operations,
-          reach new customers, and unlock growth. Yet many felt priced out or overwhelmed by
-          complexity.
-        </p>
-        <p>
-          That’s why we’re here—to bridge that gap with affordable, effective, and transparent
-          digital services that truly make a difference.
-        </p>
-      </article>
-
-    </div>
-  </section>
-
-    <section id="services" class="section alt">
+    <!-- Services -->
+    <section id="services" class="section" aria-label="Services">
       <div class="container">
         <div class="section-head reveal">
           <h2>Services</h2>
-          <p class="section-subtitle">Comprehensive solutions to grow your brand online</p>
+          <p class="section-subtitle">Smart solutions, made simple and affordable</p>
         </div>
 
         <div class="cards">
-          
           <article class="card reveal">
             <div class="icon-wrap" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
-                <path d="M8.6 13.5l6.8 3.9M15.4 6.6L8.6 10.5"></path>
-              </svg>
-            </div>
-            <h3>Social Media Marketing</h3>
-            <ul class="bullets">
-              <li>Strategic Account Management</li>
-              <li>Audience Engagement</li>
-              <li>Posting Schedule & Analytics</li>
-              <li>Brand Awareness Growth</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <div class="icon-wrap" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2c3 3.5 3 16.5 0 20M12 2c-3 3.5-3 16.5 0 20"></path>
-              </svg>
+              <!-- minimal icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2"/></svg>
             </div>
             <h3>Website Development</h3>
             <ul class="bullets">
-              <li>Fast, Mobile-Friendly Design</li>
-              <li>SEO Optimization</li>
-              <li>Landing Pages & Corporate Sites</li>
-              <li>Domain & Hosting Support</li>
+              <li>Fast, mobile-first websites</li>
+              <li>Domain & hosting setup guidance</li>
+              <li>Basic SEO & maintenance packages</li>
             </ul>
           </article>
 
           <article class="card reveal">
             <div class="icon-wrap" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 20h9"></path>
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M2 12h20" stroke="currentColor" stroke-width="1.2"/></svg>
             </div>
-            <h3>Content Creation</h3>
+            <h3>Social Media Marketing</h3>
             <ul class="bullets">
-              <li>Engaging Copywriting</li>
-              <li>Graphic Design & Visuals</li>
-              <li>Short-form Video Production</li>
-              <li>Blog & Article Writing</li>
+              <li>Content strategy & calendar</li>
+              <li>Short-form video & captions</li>
+              <li>Community & growth tactics</li>
             </ul>
           </article>
 
           <article class="card reveal">
             <div class="icon-wrap" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2a3 3 0 0 0-3 3v7h6V5a3 3 0 0 0-3-3Z"></path>
-                <path d="M19 12v3a7 7 0 0 1-7 7 7 7 0 0 1-7-7v-3"></path>
-                <line x1="12" y1="22" x2="12" y2="12"></line>
-                <path d="M2 12h20"></path>
-                <path d="M22 2L2 22"></path> 
-                <path d="M3 11l15-9v19l-15-9H0v-1h3z" fill="none" stroke="none"/> </svg>
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" style="position:absolute; top:0; left:0;">
-                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                 <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.2"/></svg>
             </div>
             <h3>Ads Management</h3>
             <ul class="bullets">
-              <li>Meta Ads (Facebook & Instagram)</li>
-              <li>Google Ads Campaigns</li>
-              <li>Target Audience Research</li>
-              <li>ROI Tracking & Optimization</li>
+              <li>Facebook & Instagram ads</li>
+              <li>Google Ads (search & display)</li>
+              <li>Conversion tracking & optimisation</li>
             </ul>
           </article>
 
           <article class="card reveal">
             <div class="icon-wrap" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 19V5M10 19V9M16 19V3M22 19H2"></path>
-              </svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19V5" stroke="currentColor" stroke-width="1.2"/></svg>
             </div>
             <h3>Data Analysis</h3>
             <ul class="bullets">
-              <li>Performance Dashboards</li>
-              <li>Customer Insight Reports</li>
-              <li>Traffic Analysis</li>
-              <li>Data-Driven Strategy</li>
+              <li>Dashboards & reports</li>
+              <li>Customer behaviour insights</li>
+              <li>Actionable recommendations</li>
             </ul>
           </article>
-
         </div>
 
         <div class="cta-center reveal">
-          <a class="btn btn-primary btn-lg"
-             href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services.">
-             Let’s Grow Your Business
-          </a>
+          <a class="btn btn-primary btn-lg" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services.">Let's build together</a>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- Contact -->
+    <section id="contact" class="section" aria-label="Contact">
       <div class="container">
-        <div class="section-head reveal">
+        <header class="section-head reveal">
           <h2>Contact</h2>
           <p class="section-subtitle">Got a project or idea? Let’s talk.</p>
-        </div>
+        </header>
 
-        <div class="contact-panel reveal">
-          <div class="contact-col">
-            <div class="contact-item">
+        <div class="contact-panel">
+          <div>
+            <div class="contact-item reveal">
               <div class="ci-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 6h20" stroke="currentColor" stroke-width="1.2"/></svg>
               </div>
               <div>
                 <div class="ci-label">Email</div>
-                <a href="mailto:tskinnovate@gmail.com" class="ci-value">tskinnovate@gmail.com</a>
+                <a class="ci-value" href="mailto:tskinnovate@gmail.com">tskinnovate@gmail.com</a>
               </div>
             </div>
 
-            <div class="contact-item">
+            <div class="contact-item reveal">
               <div class="ci-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 12 19a19.86 19.86 0 0 1-7.82 2.92A2 2 0 0 1 2 19.92v-3"/>
-                  <path d="M7 9a5 5 0 0 1 10 0v3a5 5 0 0 1-10 0Z"/>
-                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 7l6 6 14-14" stroke="currentColor" stroke-width="1.2"/></svg>
               </div>
               <div>
                 <div class="ci-label">Phone</div>
-                <a href="tel:+601151398010" class="ci-value">011-51398010</a>
+                <a class="ci-value" href="tel:+601151398010">011-51398010</a>
               </div>
             </div>
 
-            <div class="contact-item">
+            <div class="contact-item reveal">
               <div class="ci-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 3.5A10 10 0 0 0 4.7 19.2L3.5 22l2.9-1.1A10 10 0 1 0 20 3.5Z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3.5A10 10 0 0 0 4.7 19.2L3.5 22l2.9-1.1A10 10 0 1 0 20 3.5Z"/></svg>
               </div>
               <div>
                 <div class="ci-label">WhatsApp</div>
-                <a class="ci-value" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services.">Chat now</a>
+                <a class="ci-value" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener">Chat now</a>
               </div>
             </div>
           </div>
 
-          <div class="contact-col contact-cta">
-            <h3>Let’s build something amazing together</h3>
-            <p>Tell us what you’re trying to achieve. We’ll reply with a plan that fits your goals and budget.</p>
+          <div class="contact-cta reveal" aria-hidden="false">
+            <h3>Let's build something amazing together</h3>
+            <p>Tell us your goals and budget — we’ll reply with a clear plan.</p>
             <div class="contact-actions">
-              <a class="btn btn-primary btn-lg"
-                 href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services.">
-                 Chat on WhatsApp
-              </a>
+              <a class="btn btn-primary" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services.">Chat on WhatsApp</a>
               <a class="btn btn-ghost" href="mailto:tskinnovate@gmail.com">Email Us</a>
             </div>
             <p class="privacy">We respect your privacy — your info is only used to respond to your inquiry.</p>
@@ -336,17 +408,15 @@
     </section>
   </main>
 
-  <a class="wa-float"
-     href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services."
-     aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor">
-      <path d="M20 3.5A10 10 0 0 0 4.7 19.2L3.5 22l2.9-1.1A10 10 0 1 0 20 3.5Zm-8 17a8.5 8.5 0 1 1 7.2-3.9l.3.2-.5 1.4-1.4.5-.3-.2A8.5 8.5 0 0 1 12 20.5Zm4.4-5.7c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.2-.7.8-.9 1c-.2.2-.3.2-.6.1s-1.2-.4-2.3-1.4-1.6-2-1.7-2.3 0-.5.1-.6l.5-.6c.2-.2.3-.4.4-.6s0-.4 0-.6c0-.1-.6-1.4-.9-1.9-.2-.4-.4-.3-.6-.3h-.5c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.6 1.1 3 1.2 3.2 2.2 3.4 5.3 4.7c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.2-1.2s-.1-.3-.3-.4Z"/>
-    </svg>
+  <!-- Floating WhatsApp button -->
+  <a class="wa-float" href="https://wa.me/601151398010?text=Hi%20TSK%20Innovations!%20I%27m%20interested%20in%20your%20services." aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" width="28" height="28" aria-hidden="true"><path d="M20 3.5A10 10 0 0 0 4.7 19.2L3.5 22l2.9-1.1A10 10 0 1 0 20 3.5Z" fill="white" opacity="0.08"/><path d="M16.25 15.25c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.68.15-.21.3-.82.96-1.01 1.16-.18.2-.36.22-.67.07-.31-.15-1.33-.49-2.54-1.56-.94-.84-1.57-1.88-1.75-2.18-.18-.3-.02-.46.13-.61.14-.14.31-.36.46-.54.15-.18.2-.3.3-.5.1-.21.05-.39-.02-.54-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.54.07-.82.37-.28.3-1.06 1.03-1.06 2.51 0 1.48 1.09 2.91 1.24 3.11.15.2 2.15 3.45 5.21 4.84 3.06 1.39 3.06.93 3.61.87.55-.06 1.75-.71 2-1.4.25-.69.25-1.28.18-1.4-.07-.12-.27-.18-.57-.33z" fill="#fff"/></svg>
   </a>
 
-  <footer class="site-footer">
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© 2025 TSK Innovations. All rights reserved.</p>
+      <p>© <span id="year"></span> TSK Innovations. All rights reserved.</p>
       <nav class="footer-nav" aria-label="Footer">
         <a href="#services">Services</a>
         <a href="mailto:tskinnovate@gmail.com">Email</a>
@@ -355,7 +425,67 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <!-- Scripts -->
+  <script>
+    // Helper: query
+    const $ = sel => document.querySelector(sel);
+    const $$ = sel => document.querySelectorAll(sel);
+
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Smooth scroll for internal links
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        // close nav on mobile after click
+        if (nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+
+    // Simple reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.15});
+    revealEls.forEach(el => io.observe(el));
+
+    // Accessibility: close mobile nav with Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.focus();
+      }
+    });
+
+    // Prefers-reduced-motion respect
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (media.matches) {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
 </body>
 </html>
 
