@@ -5,55 +5,51 @@
 
 /* =================== THEME / VARIABLES =================== */
 :root{
-  /* Background */
-  --bg-1: #031426;      /* top */
-  --bg-2: #07263f;      /* bottom */
+  /* 🎨 Background (bright gradient) */
+  --bg-1: #0a1a3a;       /* Deep royal blue */
+  --bg-2: #103d77;       /* Brighter blue */
 
-  /* Text */
-  --text: #F5FBFF;      /* body / primary text (increased brightness) */
-  --muted: rgba(230,238,246,0.70); /* secondary text */
+  /* ✨ Text */
+  --text: #fdfdfd;       /* Bright white */
+  --muted: rgba(255,255,255,0.82); /* brighter secondary text */
 
-  /* Cards / surfaces */
-  --card: rgba(255,255,255,0.035);
-  --glass: rgba(255,255,255,0.03);
+  /* 🧊 Cards / Surfaces */
+  --card: rgba(255,255,255,0.12);   /* brighter than before */
+  --glass: rgba(255,255,255,0.16);
 
-  /* Accent / CTA */
-  --accent: #00A86B;    /* primary green */
-  --accent-2: #10E0A5;  /* brighter green for gradient */
+  /* 💚 Accent (buttons, highlights) */
+  --accent: #1de9b6;     /* Mint green bright */
+  --accent-2: #00ffa3;   /* Neon green */
 
-  /* Contrast fallback accent for hover */
-  --accent-plain: #00b86f;
+  /* 🟠 Secondary accent (optional future use) */
+  --accent-orange: #ffb857;
+  --accent-purple: #9d7cff;
 
-  /* Sizing */
-  --container: 1200px;
+  /* 💎 Shadows */
+  --shadow-sm: 0 6px 20px rgba(0,0,0,0.30);
+  --shadow-md: 0 18px 40px rgba(0,0,0,0.40);
+
+  /* Radius & layout */
   --radius: 14px;
-  --gap: 1rem;
+  --container: 1200px;
 
-  /* Shadows */
-  --shadow-sm: 0 6px 16px rgba(2,8,23,0.45);
-  --shadow-md: 0 14px 40px rgba(2,8,23,0.55);
-
-  /* Motion / timing */
-  --ease: cubic-bezier(.2,.9,.2,1);
-  --dur: 260ms;
-
-  /* Accessibility */
-  --focus-color: rgba(16,185,129,0.22);
-  --focus-outline: 3px;
-
-  /* Typography (scale) */
-  --fs-base: 16px; /* body font-size */
+  /* Typography */
+  --fs-base: 16px;
   --fs-sm: 14px;
   --fs-lg: 18px;
   --fs-xl: 20px;
   --fs-xxl: 28px;
 
-  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  font-size: var(--fs-base);
-  color: var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  /* Other */
+  --gap: 1rem;
+  --ease: cubic-bezier(.2,.9,.2,1);
+  --dur: 260ms;
+  --focus-color: rgba(0,255,163,0.28);
+  --focus-outline: 3px;
+
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto;
 }
+
 
 /* Reduced motion users */
 @media (prefers-reduced-motion: reduce){
